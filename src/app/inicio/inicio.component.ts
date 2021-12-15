@@ -91,11 +91,14 @@ export class InicioComponent implements OnInit {
     
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      this.alertas.showAlertSuccess("Post Successfully!")
-      this.postagem = new Postagem()
-      this.getAllPostagens()
     })
-    
+    this.alertas.showAlertSuccess("Posted Successfully!")
+    this.limparPostagem()
+    this.getAllPostagens()
+  }
+
+  limparPostagem(){
+    this.postagem = new Postagem()
   }
 
   findByTituloPostagem(){

@@ -93,7 +93,6 @@ export class InicioComponent implements OnInit {
       this.postagem = resp
     })
     this.alertas.showAlertSuccess("Posted Successfully!")
-    this.limparPostagem()
     this.getAllPostagens()
   }
 

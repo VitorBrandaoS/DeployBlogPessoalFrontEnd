@@ -63,6 +63,36 @@ export class UserEditComponent implements OnInit {
     })    
   }
 
+  updateFoto() {
+    this.authService.atualizarFoto(this.usuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
+      this.alertas.showAlertSuccess("User updated successfully! Please log in again...")
+      environment.token = ""
+      environment.nome = ""
+      environment.foto = ""
+      environment.id = 0
+      environment.tipo = ""
+      this.router.navigate(["/entrar"])
+    })    
+  }
+
+  updateSenha() {
+    if(this.usuario.senha != this.confirmarSenha){
+      this.alertas.showAlertDanger("Passwords do not match! Please try again...")
+    }else{
+      this.authService.atualizarSenha(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp
+        this.alertas.showAlertSuccess("User updated successfully! Please log in again...")
+        environment.token = ""
+        environment.nome = ""
+        environment.foto = ""
+        environment.id = 0
+        environment.tipo = ""
+        this.router.navigate(["/entrar"])
+      })
+    }        
+  }
+
   findByIdUser(id: number) {
     this.authService.getByIdUser(id).subscribe((resp: Usuario) => {
       this.usuario = resp

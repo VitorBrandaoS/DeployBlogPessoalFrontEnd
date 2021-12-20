@@ -50,7 +50,7 @@ export class UserEditComponent implements OnInit {
   }
 
   update() {
-    this.usuario.tipo = this.tipoUsuario
+    //this.usuario.tipo = this.tipoUsuario
     this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
       this.alertas.showAlertSuccess("User updated successfully! Please log in again...")

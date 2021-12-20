@@ -124,3 +124,6 @@ a {
 .btn-react:active {
     opacity: 40%;
 }
+pagination-controls /deep/ pagination-template ul{
+    padding-inline-start: 0px !important;
+}

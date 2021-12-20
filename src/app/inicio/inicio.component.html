@@ -81,7 +81,7 @@
 
             <div class="d-flex flex-wrap justify-content-center mt-3">
                 <div class="card m-3 card-style hreact" style="width: 20rem;"
-                    *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                    *ngFor="let item of listaPostagens | orderBy : key : reverse | paginate: { itemsPerPage: 12, currentPage: paginaAtual}; let i = index">
 
                     <img src="{{item.imagem}}" class="card-img-top img-card" alt="...">
                     <a class="btn-react" (click)="reactionFunction(item.id, 'like')"><img class="reaction like"
@@ -111,9 +111,10 @@
                             </span>
 
                         </div>
-                    </div>
+                    </div>                    
                 </div>
             </div>
+            <pagination-controls class="text-center ngx-pagination" (pageChange)="paginaAtual = $event"></pagination-controls>
         </div>
 
         <div class="tab-pane fade" id="myPosts" role="tabpanel" aria-labelledby="nav-myPosts-tab">

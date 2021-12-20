@@ -23,6 +23,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { UserEditFotoComponent } from './edit/user-edit-foto/user-edit-foto.component';
 import { UserEditUsernameComponent } from './edit/user-edit-username/user-edit-username.component';
 import { UserEditSenhaComponent } from './edit/user-edit-senha/user-edit-senha.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { UserEditSenhaComponent } from './edit/user-edit-senha/user-edit-senha.c
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: LocationStrategy,

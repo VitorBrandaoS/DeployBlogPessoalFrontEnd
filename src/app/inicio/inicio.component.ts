@@ -28,6 +28,7 @@ export class InicioComponent implements OnInit {
   nomeTema: string
   idUsuario = environment.id
   usuario: Usuario = new Usuario()
+  public paginaAtual = 1
 
   key = "data"
   reverse = true

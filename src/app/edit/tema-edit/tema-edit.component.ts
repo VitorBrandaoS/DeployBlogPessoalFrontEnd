@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment.prod';
 export class TemaEditComponent implements OnInit {
 
   tema: Tema = new Tema()
+  altura: number
 
   constructor(
     private temaService: TemaService,
@@ -27,6 +28,8 @@ export class TemaEditComponent implements OnInit {
       //alert("Your session has expired! Please log in again.")
       this.router.navigate(["/entrar"])
     }
+
+    this.altura = window.innerHeight - 279
 
     let id = this.route.snapshot.params["id"]
 

@@ -14,6 +14,7 @@ export class TemaDeleteComponent implements OnInit {
 
   tema: Tema = new Tema()
   idTema: number
+  altura: number
 
   constructor(
     private temaService: TemaService,
@@ -30,7 +31,7 @@ export class TemaDeleteComponent implements OnInit {
 
     this.idTema = this.route.snapshot.params["id"]
     this.findByIdTema(this.idTema)
-
+    this.altura = window.innerHeight - 190
   }
 
   findByIdTema(id: number){
